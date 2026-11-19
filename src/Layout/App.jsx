@@ -1,17 +1,15 @@
-// Importación de componentes principales
-import NavBar from "/src/Components/navbar/Navbar";
-import store from "../redux/store";
-
 // Importación del Provider de Redux.
 import { Provider } from "react-redux";
 
 import { AppRouter } from "../router/AppRouter";
+import Nav from "../components/nav/Nav";
 
 function App() {
   return (
-    <>
+    <section className="min-h-screen w-full py-4 movil:px-2 desktop:px-7">
+      <Nav />
       <AppRouter />
-    </>
+    </section>
   );
 }
 
