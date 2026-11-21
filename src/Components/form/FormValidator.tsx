@@ -6,7 +6,7 @@ const FormValidator = () => {
       <input 
         type="text" 
         placeholder="Ingresa tu contraseña" 
-        className="w-full px-2 py-2 rounded-sm bg-blue2 text-purple-100"
+        className="px-2 py-1.5 text-white font-secondary-600 text-txt-description2 w-full relative bg-purple-night/10 border border-purple-night/30 rounded-sm"
       />
     </form>
   )

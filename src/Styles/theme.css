@@ -1,27 +1,17 @@
 @theme {
   --spacing: 10px;
+ 
+  --color-purple: #8E05C2;
+  --color-purple-night: #700B97;
+  --color-purple-dark: #3E065F;
 
-  --color-blue: #1B0327;
-  --color-blue2: #230444;
-  --color-blue3: #00F4F5;
-
-  --color-green: #00CD96;
-  --color-green2: #00FFBB;
-
-  --color-orange: #945419;
-
+  --color-black: #000000;
+  --color-white: #FFFFFF;
   --color-gray: #35424B;
-
-  --color-purple-50: #F5EFF8;
-  --color-purple-100: #E9DEEF;
-  --color-purple-200: #D8C6E5;
-  --color-purple-300: #C4A9D7;
-  --color-purple-400: #A787C2;
-  --color-purple-500: #8A68A5;
-  --color-purple-600: #694C84;
-  --color-purple-700: #4E3466;
-  --color-purple-800: #35204D;
-  --color-purple-900: #230444;
+  --color-pink: #C894E3;
+  --color-green: #00FF00;
+  --color-red: #FF0000;
+  --color-yellow: #FFFF00;
 
   --breakpoint-movil: 320px;
   --breakpoint-tablet: 768px;

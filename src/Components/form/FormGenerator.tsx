@@ -14,15 +14,15 @@ export const FormGenerator = ({ password, entropia }: FormProps) => {
 
   const getEntropyMessage = () => {
     if (entropiaState >= 128){
-      return {text: "Muy Fuerte", textColor: "text-blue3", circleColor: "before:bg-blue3"};
+      return {text: "Muy Fuerte", textColor: "text-green", circleColor: "before:bg-green"};
     }
-    else if (entropia >= 96) {
-      return {text: "Fuerte", textColor: "text-blue3/50", circleColor: "before:bg-blue3/50"};
+    else if (entropia && entropia >= 96) {
+      return {text: "Fuerte", textColor: "text-white", circleColor: "before:bg-blue"};
     }
-    else if (entropia >= 64) {
-      return {text: "Moderada", textColor: "text-yellow-400", circleColor: "before:bg-yellow-400"};
+    else if (entropia && entropia >= 64) {
+      return {text: "Moderada", textColor: "text-yellow", circleColor: "before:bg-yellow"};
     }
-    return {text: "Débil", textColor: "text-red-500", circleColor: "before:bg-red-500"};
+    return {text: "Débil", textColor: "text-red", circleColor: "before:bg-red"};
   };
 
   const entropyMessage = getEntropyMessage();
@@ -33,16 +33,16 @@ export const FormGenerator = ({ password, entropia }: FormProps) => {
       action="#" 
       onSubmit={(e) => e.preventDefault()}
     >
-      <div className="w-full relative bg-blue2 rounded-sm">
+      <div className="w-full relative bg-purple-night/10 border border-purple-night/30 rounded-sm">
         <input 
           type="text" 
-          className="w-full px-2 py-3 rounded-sm bg-blue1 text-purple-100"
+          className="w-full px-2 py-1.5 rounded-sm text-white font-secondary-600 text-txt-title2"
         />
-        <button className="buttonCopy p-[0.8rem] rounded-xs bg-blue absolute right-2 top-1/2 -translate-y-1/2">
+        <button className="buttonCopy p-[0.8rem] rounded-xs bg-black rotate-45 absolute right-2 top-1/2 -translate-y-1/2 cursor-pointer hover:scale-111 duration-200">
           <img 
             src={IconCopy} 
             alt="Copiar" 
-            className="w-2 h-2"
+            className="w-2 h-2 -rotate-45"
             title="Copiar"
             width={16}
             height={16}
@@ -51,7 +51,7 @@ export const FormGenerator = ({ password, entropia }: FormProps) => {
         </button>
       </div>
     
-      <div className="flex flex-col gap-2">
+      <div className="flex flex-col gap-1">
         <div className="max-desktop:hidden flex flex-col">
           <span
             className={`relative ${entropyMessage.textColor} text-txt-description4 uppercase ml-2
@@ -59,11 +59,11 @@ export const FormGenerator = ({ password, entropia }: FormProps) => {
           >
             {entropyMessage.text}
           </span>
-          <hr className="my-2 border-gray/50" />
+          <hr className="my-1 border-gray/50" />
         </div>
 
         <div>
-          <p className="text-txt-description3 text-purple-100 font-primary-600">
+          <p className="text-txt-description2 text-white/70 font-primary-600">
             Longitud de la clave
           </p>
         </div>
@@ -74,16 +74,16 @@ export const FormGenerator = ({ password, entropia }: FormProps) => {
             min="30" 
             max="100"  
             onChange={(e) => setEntropiaState(Number(e.target.value))}
-            className="w-full accent-blue3"
+            className="w-full accent-purple-dark"
             value={entropiaState}
           />
-          <span className="text-txt-description3 text-purple-100 font-secondary-600 p-1.5 rounded-md bg-blue border border-blue2">
+          <span className="text-txt-description3 text-purple-100 font-secondary-600 p-1.5 rounded-md bg-purple-dark/5 border border-purple-night/28">
             {entropiaState}
           </span>
         </div>
 
         <div className="flex flex-col gap-2">
-          <p className="text-txt-description3 text-purple-100 font-primary-600">
+          <p className="text-txt-description2 text-white/70 font-primary-600">
             Personaliza tu clave
           </p>
           <div className="grid grid-cols-2 w-full gap-2">
@@ -94,9 +94,15 @@ export const FormGenerator = ({ password, entropia }: FormProps) => {
           </div>
         </div>
 
-        <button className="flex items-center justify-center gap-1 px-4 py-2 rounded-md bg-blue3 text-blue text-txt-description3 font-primary-900 cursor-pointer">
+        <button className="flex items-center justify-center gap-1 px-4 py-2 mt-1 rounded-md bg-purple text-white text-txt-description2 font-primary-900 cursor-pointer group">
           <span>Generar contraseña</span>
-          <img src={iconArrowBlack} alt="Flecha" width={20} height={20} />
+          <img 
+            src={iconArrowBlack} 
+            alt="Flecha" 
+            width={20} 
+            height={20}
+            className="duration-200 group-hover:rotate-45"
+          />
         </button>
       </div>
     </form>

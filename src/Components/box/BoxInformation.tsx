@@ -7,7 +7,7 @@ export interface BoxInformationProps {
 
 const BoxInformation = ({ title, description }: BoxInformationProps) => {
   return (
-    <div className="w-full flex justify-start items-center bg-blue border border-purple-800 rounded-md p-2.5 gap-2 group">
+    <div className="w-full flex justify-start items-center bg-purple-dark/40 border border-pink/20 rounded-md p-2.5 gap-2 group">
       <img 
         src={IconCheck} 
         alt="Icono de verificación" 
@@ -17,10 +17,10 @@ const BoxInformation = ({ title, description }: BoxInformationProps) => {
         loading="lazy"
       />
       <div className="flex flex-col gap-0.5">
-        <h3 className="text-purple-100 text-txt-description3 font-secondary-600 uppercase">
+        <h3 className="text-pink text-txt-description3 font-secondary-600 uppercase">
           {title}
         </h3>
-        <p className="text-purple-200 text-txt-description3 font-secondary-300">
+        <p className="text-white/80 text-txt-description3 font-secondary-300">
           {description}
         </p>
       </div>

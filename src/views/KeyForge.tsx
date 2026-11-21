@@ -9,28 +9,30 @@ const KeyForge = () => {
     <div className="flex flex-col gap-2">
       <header className="w-full h-full flex justify-between py-3">
         <div className="flex flex-col gap-5 justify-between">
-          <span className="text-txt-description4 font-secondary-300 uppercase text-blue3">
+          <span className="text-txt-description4 font-secondary-300 uppercase text-pink">
             Generador y validador de contraseñas <span className="mx-1">/</span> V 2.0
           </span>
 
-          <h1 className="text-purple-100 font-primary-900 text-txt-title0 uppercase">Key Forge</h1>
+          <h1 className="text-white font-primary-900 text-txt-title0 uppercase">
+            Key Forge
+          </h1>
 
-          <p className="text-txt-description3 font-primary-300 text-purple-200">
+          <p className="text-txt-description3 font-primary-300 text-white/70">
             Personaliza longitud y caracteres. La clave se genera en tu dispositivo.
           </p>
         </div>
         <div className="max-desktop:hidden">
-          <div className="flex items-center gap-2 py-1 px-2 rounded-md bg-purple-900/50 border border-purple-800">
+          <div className="flex items-center gap-2 py-1 px-2 rounded-md bg-purple-night/30 border border-purple-800">
             <img 
               src={IconShield} 
               alt="Privacidad total, tu clave es única." 
               className="w-3 h-3"
             />
             <p className="flex flex-col gap-0.5">
-              <span className="text-txt-description3 font-secondary-300 uppercase text-purple-100">
+              <span className="text-txt-description3 font-secondary-600 uppercase text-purple-100">
                 Privacidad Total
               </span>
-              <span className="text-txt-description3 font-secondary-300 text-purple-200">
+              <span className="text-txt-description3 font-secondary-300 text-pink">
                 Tu clave es única.
               </span>
             </p>
@@ -40,37 +42,37 @@ const KeyForge = () => {
 
       <main className="w-full h-full flex movil:flex-col desktop:flex-row gap-5">
         {/* Generador */}
-        <div className="flex flex-col gap-3 w-full desktop:w-[70%]">
-          <span className="text-txt-description4 font-secondary-300 uppercase text-purple-700">
+        <div className="bg-purple-dark/40 p-4 rounded-lg flex flex-col gap-3 w-full desktop:w-[70%]">
+          <span className="text-txt-description4 font-secondary-300 uppercase text-pink">
             01<span className="mx-1">/</span> Generador
           </span>
           <FormGenerator />
         </div>
 
         {/* Validador */}
-        <div className="w-full desktop:w-[30%] flex flex-col gap-2">
-          <span className="text-txt-description4 font-secondary-300 uppercase text-purple-700">
+        <div className="w-full desktop:w-[30%] flex flex-col gap-2 bg-purple-dark/40 p-4 rounded-lg">
+          <span className="text-txt-description4 font-secondary-300 uppercase text-pink">
             02 <span className="mx-0.5">/</span> Validador
           </span>
           <div className="flex flex-col gap-2 justify-center items-center h-25 w-full">
             <div className={`w-10 h-10 z-10 rounded-full flex items-center justify-center relative`}>
-              <div className="w-full h-full absolute inset-0 bg-red-600 blur-2xl rounded-full"></div>
-              <div className="bg-blue/80 rounded-full p-1 z-20">
+              <div className={`w-full h-full absolute inset-0 bg-green blur-2xl rounded-full`}></div>
+              <div className="bg-white/5 border border-white/10 shimmer animate-spin rounded-full p-1 z-20">
                 <img 
                   src={IconPassword} 
                   alt="Validador" 
-                  className="w-2 h-2 object-contain"
+                  className="w-2 h-2 object-contain invert"
                   title="Validador de contraseñas"
                 />
               </div>
             </div>
           </div>
 
-          <div className="flex flex-col gap-1 bg-blue/10 rounded-md p-2 border border-blue2">
-            <h3 className="text-txt-description4 font-secondary-300 text-purple-100/80 uppercase">
-              Entripía Estimada
+          <div className="flex flex-col gap-1 rounded-md p-2 bg-purple-night/10 border border-purple-800">
+            <h3 className="text-txt-description3 font-secondary-300 text-white uppercase">
+              Entoripía Estimada
             </h3>
-            <p className="text-txt-description4 font-secondary-300 text-purple-200/80">
+            <p className="text-txt-title2 font-secondary-300 text-pink">
               {104} bits
             </p>
           </div>

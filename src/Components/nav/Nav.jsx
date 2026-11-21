@@ -10,9 +10,8 @@ function Navbar() {
     setIsMobileMenuOpen(!isMobileMenuOpen);
   };
 
-
   return (
-    <nav className="nav w-full h-5 bg-blue2/50 flex items-center justify-between p-2 rounded-xs relative">
+    <nav className="nav w-full h-5 bg-purple-dark/42 flex items-center justify-between p-2 rounded-sm relative border border-purple-night/28 z-20">
       <div>
         <a href="/" className="no-underline">
           <img
@@ -28,11 +27,11 @@ function Navbar() {
       <ul 
         id="nav-links" 
         className={`flex items-center gap-3 ${isMobileMenuOpen ? 'max-desktop:hidden' : ''}
-        max-desktop:absolute max-desktop:left-0 max-desktop:top-full max-desktop:w-full max-desktop:bg-blue2/50 max-desktop:p-2 max-desktop:rounded-b-xs`}
+        max-desktop:absolute max-desktop:-left-1 max-desktop:top-5 max-desktop:w-screen max-desktop:h-8 max-desktop:bg-black max-desktop:p-2 max-desktop:rounded-b-xs`}
         aria-hidden={!isMobileMenuOpen}
         aria-label="Navegación principal"
       >
-        <li className="text-purple-100 text-txt-description4 hover:text-blue3 active:text-blue3 transition-colors uppercase">
+        <li className="text-white text-txt-description4 hover:text-pink active:text-pink transition-colors font-primary-300 hover:font-primary-900 active:font-primary-900 uppercase">
           <a
             href="/"
             className="no-underline hover:no-underline active:no-underline"
@@ -41,7 +40,7 @@ function Navbar() {
             Generador
           </a>
         </li>
-        <li className="text-purple-100 text-txt-description4 hover:text-blue3 transition-colors uppercase">
+        <li className="text-white text-txt-description4 hover:text-pink active:text-pink transition-colors font-primary-300 hover:font-primary-900 active:font-primary-900 uppercase">
           <a
             href="/guia-de-seguridad"
             className="no-underline hover:no-underline active:no-underline"
@@ -51,6 +50,7 @@ function Navbar() {
           </a>
         </li>
       </ul>
+
       <button
         id="mobile-menu-btn"
         className="hidden max-desktop:block cursor-pointer"
@@ -66,7 +66,7 @@ function Navbar() {
       </button>
 
       <div className="max-desktop:hidden">
-        <span className="relative text-blue3 text-txt-description4 before:content-[''] before:w-[0.8rem] before:h-[0.8rem] before:bg-blue3 before:absolute before:left-0 before:top-1/2 before:-translate-y-1/2 before:translate-x-[-1.5rem] before:rounded-full">
+        <span className="font-secondary-600 relative text-purple text-txt-description4 before:content-[''] before:w-[0.8rem] before:h-[0.8rem] before:bg-purple before:absolute before:left-0 before:top-1/2 before:-translate-y-1/2 before:translate-x-[-1.5rem] before:rounded-full">
           Procesamiento local
         </span>
       </div>
