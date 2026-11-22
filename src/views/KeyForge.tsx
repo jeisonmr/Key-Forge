@@ -42,7 +42,7 @@ const KeyForge = () => {
 
       <main className="w-full h-full flex movil:flex-col desktop:flex-row gap-5">
         {/* Generador */}
-        <div className="bg-purple-dark/40 p-4 rounded-lg flex flex-col gap-3 w-full desktop:w-[70%]">
+        <div className="bg-purple-dark/40 p-4 rounded-lg flex flex-col gap-3 w-full desktop:w-[70%] relative">
           <span className="text-txt-description4 font-secondary-300 uppercase text-pink">
             01<span className="mx-1">/</span> Generador
           </span>
