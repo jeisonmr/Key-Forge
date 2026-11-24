@@ -2,7 +2,7 @@ import IconCopy from "@public/icons/copy.png";
 import iconArrowBlack from "@public/icons/arrow_black.png";
 import { useState } from "react";
 import Toggle from "../switch/Switch";
-import { copyPassoword, passGenerator } from "../../scripts/generator";
+import { copyPassoword, getEntropyMessage, passGenerator } from "../../scripts/generator";
 
 export interface FormProps {
   password?: string;
@@ -11,30 +11,15 @@ export interface FormProps {
 
 export const FormGenerator = ({ password, entropia }: FormProps) => {
 
-  const [entropiaState, setEntropiaState] = useState<number>(30);
+  const [entropiaState, setEntropiaState] = useState<number>(15);
   const [passwordState, setPassword] = useState<string>('');
   const [showNotyState, setShowNoty] = useState<boolean>(false);
+
   const [mayusculaState, setMayusculaState] = useState<boolean>(false);
   const [minusculaState, setMinusculaState] = useState<boolean>(false);
   const [numeroState, setNumeroState] = useState<boolean>(false);
-  const [caracteresState, setCaracteresState] = useState<boolean>(true);  
-  
-  
-  const getEntropyMessage = () => {
-    if (entropiaState >= 128){
-      return {text: "Muy Fuerte", textColor: "text-green", circleColor: "before:bg-green"};
-    }
-    else if (entropia && entropia >= 96) {
-      return {text: "Fuerte", textColor: "text-white", circleColor: "before:bg-blue"};
-    }
-    else if (entropia && entropia >= 64) {
-      return {text: "Moderada", textColor: "text-yellow", circleColor: "before:bg-yellow"};
-    }
-    return {text: "Débil", textColor: "text-red", circleColor: "before:bg-red"};
-  };
-
-  const entropyMessage = getEntropyMessage();
-  
+  const [caracteresState, setCaracteresState] = useState<boolean>(false);  
+    
   return (
     <form 
       className="flex flex-col gap-4"
@@ -51,16 +36,19 @@ export const FormGenerator = ({ password, entropia }: FormProps) => {
         />
         <button 
           className="buttonCopy p-[0.8rem] rounded-xs bg-black rotate-45 absolute right-2 top-1/2 -translate-y-1/2 cursor-pointer hover:scale-111 duration-200"
-          onClick={()=>{
-            copyPassoword(passwordState);
-            setShowNoty(true);
-            setTimeout(() => {
-              setShowNoty(false);
-            }, 2000);
+          onClick={(e)=>{
+            if(passwordState.length > 0){
+              copyPassoword(passwordState);
+              setShowNoty(true);
+              setTimeout(() => {
+                setShowNoty(false);
+              }, 2000);
+            }
+            e.preventDefault();
           }}
         >
           <img 
-            src={IconCopy} 
+            src={IconCopy}
             alt="Copiar" 
             className="w-2 h-2 -rotate-45"
             title="Copiar"
@@ -80,12 +68,12 @@ export const FormGenerator = ({ password, entropia }: FormProps) => {
     
       <div className="flex flex-col gap-1">
         <div className="max-desktop:hidden flex flex-col">
-          <span
+          {/* <span
             className={`relative ${entropyMessage.textColor} text-txt-description4 uppercase ml-2
                   before:content-[''] before:w-[0.8rem] before:h-[0.8rem] ${entropyMessage.circleColor} before:absolute before:left-0 before:top-1/2 before:-translate-y-1/2 before:translate-x-[-1.5rem] before:rounded-full`}
           >
             {entropyMessage.text}
-          </span>
+          </span> */}
           <hr className="my-1 border-gray/50" />
         </div>
 
@@ -98,9 +86,11 @@ export const FormGenerator = ({ password, entropia }: FormProps) => {
         <div className="flex items-center justify-between gap-2">
           <input 
             type="range" 
-            min="30" 
-            max="100"  
-            onChange={(e) => setEntropiaState(Number(e.target.value))}
+            min="8" 
+            max="45"  
+            onChange={(e) => {
+              setEntropiaState(Number(e.target.value))
+            }}
             className="w-full accent-purple-dark"
             value={entropiaState}
           />
@@ -114,17 +104,20 @@ export const FormGenerator = ({ password, entropia }: FormProps) => {
             Personaliza tu clave
           </p>
           <div className="grid grid-cols-2 w-full gap-2">
-            <Toggle title="Mayúsculas" setCheck={setMayusculaState} />
-            <Toggle title="Minúsculas" setCheck={setMinusculaState} />
-            <Toggle title="Números" setCheck={setNumeroState} />
-            <Toggle title="Símbolos" setCheck={setCaracteresState} />
+            <Toggle title="Mayúsculas" setCheck={setMayusculaState} stateCheck={mayusculaState} />
+            <Toggle title="Minúsculas" setCheck={setMinusculaState} stateCheck={minusculaState} />
+            <Toggle title="Números" setCheck={setNumeroState} stateCheck={numeroState} />
+            <Toggle title="Símbolos" setCheck={setCaracteresState} stateCheck={caracteresState} />
           </div>
         </div>
 
         <button 
           className="flex items-center justify-center gap-1 px-4 py-2 mt-1 rounded-md bg-purple text-white text-txt-description2 font-primary-900 cursor-pointer group"
-          onClick={()=>{
-            setPassword(passGenerator(entropiaState, mayusculaState, minusculaState, numeroState, caracteresState))
+          onClick={(e)=>{
+            if(mayusculaState || minusculaState || numeroState || caracteresState){
+              setPassword(passGenerator(entropiaState, mayusculaState, minusculaState, numeroState, caracteresState));
+            }
+            e.preventDefault();
           }}
         >
           <span>Generar contraseña</span>

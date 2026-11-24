@@ -3,18 +3,18 @@ import Switch from "@mui/material/Switch";
 
 interface ToogleProps {
   setCheck?:any;
+  stateCheck?:boolean;
   title?: string;
   className?:string;
 }
 
-const Toggle = ({setCheck, title, className}: ToogleProps) => {
+const Toggle = ({setCheck, title, className, stateCheck}: ToogleProps) => {
   return (
     <div className={`${className} flex items-center gap-1 p-1 rounded-xs accent-pink bg-purple-night/10 border border-purple-800`}>
       {/* Render del Switch Toggle */}
       <Switch
-        // checked={checked}
-        onChange={setCheck}
-        // onClick={()=>{console.log('')}}
+        checked={stateCheck ?? false}
+        onChange={(e)=>setCheck(e.target.checked)}
         inputProps={{ "aria-label": "controlled" }}
         className="accent-pink"
       />
