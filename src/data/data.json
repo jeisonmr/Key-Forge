@@ -1,0 +1,49 @@
+{
+  "tips": [
+    {
+      "number": "01",
+      "label": "LENGTH",
+      "title": "Longitud primero",
+      "description": "Prefiere 16 caracteres o más. Una frase generada al azar puede ser fácil de recordar y difícil de adivinar.",
+      "accent": "bg-black/30"
+    },
+    {
+      "number": "02",
+      "label": "UNIQUE",
+      "title": "Una clave por cuenta",
+      "description": "No reutilices contraseñas: una filtración no debe abrir la puerta a tus otras cuentas.",
+      "accent": "bg-black/30"
+    },
+    {
+      "number": "03",
+      "label": "MANAGER",
+      "title": "Usa un gestor",
+      "description": "Deja que genere y guarde claves únicas. Protege el gestor con una contraseña maestra fuerte.",
+      "accent": "bg-black/30"
+    },
+    {
+      "number": "04",
+      "label": "MFA",
+      "title": "Activa MFA o passkeys",
+      "description": "Añade un segundo factor o usa passkeys cuando el servicio lo permita.",
+      "accent": "bg-black/30"
+    }
+  ],
+  "encryptionSteps": [
+    {
+      "number": "01",
+      "title": "Tu dispositivo",
+      "description": "La clave se deriva localmente."
+    },
+    {
+      "number": "02",
+      "title": "Cifrado",
+      "description": "Los datos se vuelven ilegibles."
+    },
+    {
+      "number": "03",
+      "title": "Bóveda",
+      "description": "Se sincroniza el contenido cifrado."
+    }
+  ]
+}

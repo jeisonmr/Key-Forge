@@ -1,31 +1,15 @@
-// Importación de componentes principales
-import NavBar from "/src/Components/navbar/Navbar";
-import Pass from "../View/home/homePass";
-import Information from "../View/informacion/informacion";
-import Footer from "../View/footer/footer";
-import store from "../Redux/store";
 // Importación del Provider de Redux.
 import { Provider } from "react-redux";
 
+import { AppRouter } from "../router/AppRouter";
+import Nav from "../components/nav/Nav";
+
 function App() {
-  // Estilos del componente.
-  const dimensiones = {
-    width: "100%",
-    height: "100vh",
-  };
-
   return (
-    // Estado global de la App
-    <Provider store={store}>
-      <main style={dimensiones}>
-
-        {/* Componentes */}
-        <NavBar />
-        <Pass />
-        <Information />
-        <Footer />
-      </main>
-    </Provider>
+    <section className="min-h-screen w-full py-4 movil:px-2 desktop:px-7">
+      <Nav />
+      <AppRouter />
+    </section>
   );
 }
 
