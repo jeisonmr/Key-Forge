@@ -20,9 +20,9 @@ const BoxInformation = ({ title, description }: BoxInformationProps) => {
         <h3 className="text-pink text-txt-description3 font-secondary-600 uppercase">
           {title}
         </h3>
-        <p className="text-white/80 text-txt-description3 font-secondary-300">
+        <h4 className="text-white/80 text-txt-description3 font-secondary-300">
           {description}
-        </p>
+        </h4>
       </div>
     </div>
   )

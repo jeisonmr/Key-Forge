@@ -47,6 +47,7 @@ export const FormGenerator = ({ password, entropia }: FormProps) => {
         className="inputPassword w-full px-2 py-1.5 pr-20 rounded-sm text-white font-secondary-600 text-txt-title2"
         value={passwordState}
         readOnly
+        aria-label="Contraseña generada"
       />
 
       {/* Toggle contraseña */}
@@ -78,6 +79,7 @@ export const FormGenerator = ({ password, entropia }: FormProps) => {
 
       {/* Copiar contraseña */}
       <button
+        title="Copiar contraseña"
         type="button"
         className="buttonCopy p-[0.8rem] rounded-xs bg-black rotate-45 absolute right-2 top-1/2 -translate-y-1/2 cursor-pointer hover:scale-111 duration-200"
         onClick={() => {
@@ -93,12 +95,13 @@ export const FormGenerator = ({ password, entropia }: FormProps) => {
       >
         <img
           src={IconCopy}
-          alt="Copiar"
+          alt="Copiar contraseña"
           className="w-2 h-2 -rotate-45"
           title="Copiar"
           width={16}
           height={16}
           loading="lazy"
+          aria-hidden="true"
         />
       </button>
     </div>
@@ -123,13 +126,14 @@ export const FormGenerator = ({ password, entropia }: FormProps) => {
         </div>
 
         <div>
-          <p className="text-txt-description2 text-white/70 font-primary-600">
+          <h2 className="text-txt-description2 text-white/70 font-primary-600">
             Longitud de la clave
-          </p>
+          </h2>
         </div>
 
         <div className="flex items-center justify-between gap-2">
-          <input 
+          <input
+            aria-label="Longitud de la contraseña"
             type="range" 
             min="8" 
             max="45"  
@@ -145,9 +149,9 @@ export const FormGenerator = ({ password, entropia }: FormProps) => {
         </div>
 
         <div className="flex flex-col gap-2">
-          <p className="text-txt-description2 text-white/70 font-primary-600">
+          <h2 className="text-txt-description2 text-white/70 font-primary-600">
             Personaliza tu clave
-          </p>
+          </h2>
           <div className="grid movil:grid-cols-1 desktop:grid-cols-2 w-full gap-2">
             <Toggle title="Mayúsculas" setCheck={setMayusculaState} stateCheck={mayusculaState} />
             <Toggle title="Minúsculas" setCheck={setMinusculaState} stateCheck={minusculaState} />

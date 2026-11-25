@@ -15,9 +15,9 @@ const KeyForge = () => {
     <div className="flex flex-col gap-2">
       <header className="w-full h-full flex justify-between py-3">
         <div className="flex flex-col gap-5 justify-between">
-          <span className="text-txt-description4 font-secondary-300 uppercase text-pink">
+          <h5 className="text-txt-description4 font-secondary-300 uppercase text-pink">
             Generador y validador de contraseñas <span className="mx-1">/</span> V 2.0
-          </span>
+          </h5>
 
           <h1 className="text-white font-primary-900 text-txt-title0 uppercase">
             Key Forge
@@ -49,17 +49,17 @@ const KeyForge = () => {
       <main className="w-full h-full flex movil:flex-col desktop:flex-row gap-5">
         {/* Generador */}
         <div className="bg-purple-dark/40 p-2 desktop:p-4 rounded-lg flex flex-col gap-3 w-full desktop:w-[70%] relative">
-          <span className="text-txt-description4 font-secondary-300 uppercase text-pink">
+          <h5 className="text-txt-description4 font-secondary-300 uppercase text-pink">
             01<span className="mx-1">/</span> Generador
-          </span>
+          </h5>
           <FormGenerator />
         </div>
 
         {/* Validador */}
         <div className="w-full desktop:w-[30%] flex flex-col gap-2 bg-purple-dark/40 p-2 desktop:p-4 rounded-lg">
-          <span className="text-txt-description4 font-secondary-300 uppercase text-pink">
+          <h5 className="text-txt-description4 font-secondary-300 uppercase text-pink">
             02 <span className="mx-0.5">/</span> Validador
-          </span>
+          </h5>
           <div className="flex flex-col gap-2 justify-center items-center h-25 w-full">
             <div className={`w-10 h-10 z-10 rounded-full flex items-center justify-center relative shimmer animate-pulse`}>
               <div className={`w-full h-full absolute inset-0 ${entropyState.message.bgColor} blur-2xl rounded-full`}></div>
@@ -68,9 +68,9 @@ const KeyForge = () => {
           </div>
 
           <div className="flex flex-col gap-1 rounded-md p-2 bg-purple-night/10 border border-purple-800">
-            <h3 className="text-txt-description3 font-secondary-300 text-white uppercase">
+            <h2 className="text-txt-description3 font-secondary-300 text-white uppercase">
               Entropía Estimada
-            </h3>
+            </h2>
             <p className={`text-txt-title2 font-secondary-300 ${entropyState.entropy > 0 ? 'text-pink' : 'text-transparent'} duration-500`}>
               {entropyState.entropy} bits
             </p>
