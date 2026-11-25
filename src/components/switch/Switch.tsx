@@ -18,9 +18,9 @@ const Toggle = ({setCheck, title, className, stateCheck}: ToogleProps) => {
         inputProps={{ "aria-label": "controlled" }}
         className="accent-pink"
       />
-      <span className="text-txt-description3 text-pink font-primary-600">
+      <h6 className="text-txt-description3 text-pink font-primary-600">
         {title}
-      </span>
+      </h6>
     </div>
   );
 };

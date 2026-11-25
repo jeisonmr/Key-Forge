@@ -1,5 +1,5 @@
 import LogoIcon from "@public/icons/password.png";
-import MenuIcon from "@public/icons/menu.png";
+import MenuIcon from "@public/icons/menu_.png";
 import { useState } from "react";
 
 function Navbar() {
@@ -53,13 +53,13 @@ function Navbar() {
 
       <button
         id="mobile-menu-btn"
-        className="hidden max-desktop:block cursor-pointer"
+        className="max-desktop:block cursor-pointer hidden"
         onClick={toggleMobileMenu}
       >
         <img
           src={MenuIcon}
           alt="Menú"
-          className="w-4 h-4"
+          className="w-6 h-auto"
           loading="eager"
           title="Menú"
         />
