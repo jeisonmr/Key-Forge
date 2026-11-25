@@ -1,6 +1,4 @@
 // Importación del Provider de Redux.
-import { Provider } from "react-redux";
-
 import { AppRouter } from "../router/AppRouter";
 import Nav from "../components/nav/Nav";
 
