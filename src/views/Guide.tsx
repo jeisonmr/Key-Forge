@@ -154,12 +154,12 @@ export default function Guide() {
                   />
                 </div>
 
-                <div className="max-lg:hidden absolute right-2 top-[84px] rounded-sm bg-pink px-[12px] py-[8px] font-secondary-600 text-txt-title3 text-purple-dark z-15">
-                  ÚNICA POR CUENTA
+                <div className="max-lg:hidden absolute right-2 top-[84px] rounded-sm bg-pink px-[12px] py-[8px] font-secondary-600 text-txt-title3 text-purple-dark z-15 uppercase">
+                  Contraseña única  
                 </div>
 
-                <div className="max-lg:hidden absolute left-[28px] desktop:top-25 xl:top-20 rounded-sm border border-pink bg-purple-dark px-[12px] py-[8px] font-secondary-600 text-txt-title3 text-white z-5">
-                  CIFRADO LOCAL
+                <div className="max-lg:hidden absolute left-[28px] desktop:top-25 xl:top-20 rounded-sm border border-pink bg-purple-dark px-[12px] py-[8px] font-secondary-600 text-txt-title3 text-white z-5 uppercase">
+                  Cifrado local
                 </div>
               </div>
             </div>
