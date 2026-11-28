@@ -1,6 +1,7 @@
 import { useState } from "react";
 import data from "@/data/data.json";
 import IconKey from "@public/icons/password.png";
+import { Link } from "react-router-dom";
 
 type Tip = {
   number: string;
@@ -83,12 +84,12 @@ export default function Guide() {
                 </a>
               </div>
 
-              <a
-                href="/"
+              <Link
+                to="/"
                 className="rounded-[13px] bg-pink px-[16px] py-[12px] font-primary-900 text-[12px] text-purple-dark transition duration-200 hover:-translate-y-[2px] hover:shadow-[0_8px_24px_rgba(200,148,227,0.25)]"
               >
                 Generar clave
-              </a>
+              </Link>
             </nav>
           </header>
 
@@ -305,12 +306,12 @@ export default function Guide() {
                 Única · Larga · Guardada en un gestor · MFA activado
               </p>
             </div>
-            <a
-              href="/"
+            <Link
+              to="/"
               className="mt-[18px] inline-flex rounded-[15px] bg-pink px-2 py-1.5 font-primary-900 text-txt-description2 text-purple-dark transition duration-200 hover:-translate-y-[0.2rem] hover:shadow-[0_8px_24px_rgba(200,148,227,0.2)] tablet:mt-0"
             >
               Validar una clave
-            </a>
+            </Link>
           </footer>
         </div>
       </div>

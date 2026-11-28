@@ -1,8 +1,9 @@
 import LogoIcon from "@public/icons/password.png";
 import MenuIcon from "@public/icons/menu_.png";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
-function Navbar() {
+function Nav() {
 
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(true);
 
@@ -13,7 +14,7 @@ function Navbar() {
   return (
     <nav className="nav w-full h-5 bg-purple-dark/42 flex items-center justify-between p-2 rounded-sm relative border border-purple-night/28 z-20">
       <div>
-        <a href="/" className="no-underline">
+        <Link to="/" className="no-underline">
           <img
             src={LogoIcon}
             alt="Key Forge"
@@ -21,7 +22,7 @@ function Navbar() {
             title="Key Forge - Generador de contraseñas seguras"
             loading="eager"
           />
-        </a>
+        </Link>
       </div>
 
       <ul 
@@ -32,22 +33,22 @@ function Navbar() {
         aria-label="Navegación principal"
       >
         <li className="text-white text-txt-description4 hover:text-pink active:text-pink transition-colors font-primary-300 hover:font-primary-900 active:font-primary-900 uppercase">
-          <a
-            href="/"
+          <Link
+            to="/"
             className="no-underline hover:no-underline active:no-underline"
             title="Generador de contraseñas"
           >
             Generador
-          </a>
+          </Link>
         </li>
         <li className="text-white text-txt-description4 hover:text-pink active:text-pink transition-colors font-primary-300 hover:font-primary-900 active:font-primary-900 uppercase">
-          <a
-            href="/guia-de-seguridad"
+          <Link
+            to="/guia-de-seguridad"
             className="no-underline hover:no-underline active:no-underline"
             title="Guía de seguridad"
           >
             Guía de seguridad
-          </a>
+          </Link>
         </li>
       </ul>
 
@@ -74,4 +75,4 @@ function Navbar() {
   );
 }
 
-export default Navbar;
+export default Nav;
